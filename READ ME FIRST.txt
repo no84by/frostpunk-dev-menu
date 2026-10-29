@@ -26,7 +26,9 @@ working, that is why).
 THE THREE FILES ABOVE ARE ONLY LAUNCHERS
 They do not change the game. All the work is done by dev_menu.py, a Python script. The
 launchers only find Python on your computer and start dev_menu.py, so you can double-click
-instead of typing commands. If Python is missing they tell you how to install it.
+instead of typing commands. If Python is missing they offer to start the official Python
+installer (winget / python.org on Windows, python.org on macOS, your package manager on Linux);
+you approve it yourself with the usual system prompt, then the launcher carries on.
 
 RUN IT WITHOUT THE LAUNCHERS
 With Python 3.6+ installed, open a terminal in this folder and run:

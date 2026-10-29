@@ -41,8 +41,19 @@ put the original files back (if F10 suddenly stops working, that is why).
 one Python script, `dev_menu.py`. The wrappers exist only so that a non-technical player can
 start that script with a double-click: each one looks for Python on your computer, runs
 `dev_menu.py` with it, and keeps the window open so you can read the result. If Python is not
-installed, the wrapper tells you how to get it (and on Windows offers to install it for you
-with `winget`). You can open any wrapper in a text editor to check this: each is about 20 lines.
+installed, the wrapper asks whether to install it and then starts the **official** installer,
+which you approve yourself:
+
+- Windows: `winget install Python.Python.3.13` (Windows' own package tool), or, without winget,
+  the python.org setup, downloaded and checked to be signed by the Python Software Foundation.
+  Windows shows its usual permission prompt.
+- macOS: downloads the python.org installer package, checks its Python Software Foundation
+  signature, and opens it. You click through it; macOS asks for your password.
+- Linux: runs your package manager with `sudo` (apt, dnf, pacman or zypper), which asks for your
+  password.
+
+Once Python is installed the wrapper carries on by itself. You can open any wrapper in a text
+editor to check all this: each is plain text, under 80 lines.
 
 ### Without the wrappers (run the Python script yourself)
 

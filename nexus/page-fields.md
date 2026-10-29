@@ -15,7 +15,7 @@ Press F10 in a city to open Frostpunk's own built-in developer panel (made by 11
 
 **Tags:** Cheats, Utilities, Gameplay
 
-**Requirements:** none. (Python 3 is used by the installer; the launchers help install it.)
+**Requirements:** none. (Python 3 is used by the installer; if it is missing, the launchers offer to start the official Python installer.)
 
 **Permissions / credits:**
 - Credits: Frostpunk and its developer panel: 11 bit studios. Installer: MIT licence.

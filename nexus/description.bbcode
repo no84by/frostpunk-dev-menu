@@ -39,25 +39,29 @@ The game's own panel, titled "Cheats", sorts its buttons into two columns. Toggl
 Full reference: [url=https://github.com/no84by/frostpunk-dev-menu/blob/main/docs/dev-panel.md]docs/dev-panel.md on GitHub[/url].
 
 [size=4][b]Installation[/b][/size]
-[b]Quit Frostpunk[/b], unzip the download anywhere, then double-click the file for your system:
+[b]Quit Frostpunk first.[/b] There are two ways to install; both do exactly the same thing.
+
+[b]1. Easiest: download the double-click launchers from GitHub[/b]
+Get [b]FrostpunkDevMenu-1.0.0.zip[/b] from [url=https://github.com/no84by/frostpunk-dev-menu/releases/latest]github.com/no84by/frostpunk-dev-menu/releases/latest[/url], unzip it anywhere, and double-click the file for your system:
 [list]
 [*][b]Windows[/b]: [i]Install Dev Menu (Windows).bat[/i] (if you see "Windows protected your PC": More info, then Run anyway)
 [*][b]macOS[/b]: [i]Install Dev Menu (Mac).command[/i] (first time: right-click, Open; on macOS 15+: System Settings, Privacy & Security, Open Anyway)
 [*][b]Linux / Steam Deck[/b] (Desktop Mode): in a terminal, [i]bash install-dev-menu-linux.sh[/i]
 [/list]
-It finds Frostpunk in your Steam library by itself (or asks for the folder) and offers Install or Uninstall. Then load a city and press [b]F10[/b]. In the main menu F10 does nothing visible: the panel exists only inside a city.
+[b]Those launchers are only helpers[/b], which is why they live on GitHub and not here (Nexus does not host script launchers). They do not touch the game: they find Python on your computer and start [i]dev_menu.py[/i], the same script as in the Nexus download, so non-technical players can double-click instead of typing a command. If Python is missing, they offer to start the official Python installer, which you approve yourself. Each one is short plain text you can read in any editor.
 
-[b]You install it once.[/b] The change is saved in the game files, so F10 keeps working every time you start Frostpunk from Steam as usual; there is nothing to run before playing. Run the installer again only after a Frostpunk update or a Steam "Verify integrity of game files" (if F10 suddenly stops working, that is why).
-
-[b]Those three files are only launchers.[/b] They do not touch the game. All the work is done by one Python script, [i]dev_menu.py[/i]; the launchers just find Python on your computer and start that script, so non-technical players can use a double-click instead of typing commands. If Python is missing, the launcher asks whether to install it and starts the [b]official[/b] installer (winget or python.org on Windows, the python.org package on macOS, your package manager on Linux); you approve it yourself through the usual Windows / macOS / sudo prompt, and the launcher then carries on by itself. Downloads are checked to be signed by the Python Software Foundation before they are opened. Each launcher is short plain text you can read in any editor.
-
-[b]Prefer to run it yourself?[/b] With Python 3.6+ installed, open a terminal in the folder and run:
+[b]2. The Nexus download: just the Python script[/b]
+The file on this page contains only [i]dev_menu.py[/i]. With [url=https://www.python.org/downloads/]Python 3.6 or newer[/url] installed, open a terminal in the folder and run:
 [code]python3 dev_menu.py              (interactive menu; Windows: py -3 dev_menu.py)
 python3 dev_menu.py install
 python3 dev_menu.py uninstall
 python3 dev_menu.py status
 python3 dev_menu.py install --game-dir "D:\Games\Frostpunk"[/code]
-GOG and Epic copies are not detected automatically; use [i]--game-dir[/i] with the game folder.
+It finds Frostpunk in your Steam library by itself; GOG and Epic copies need [i]--game-dir[/i] with the game folder.
+
+Then load a city and press [b]F10[/b]. In the main menu F10 does nothing visible: the panel exists only inside a city.
+
+[b]You install it once.[/b] The change is saved in the game files, so F10 keeps working every time you start Frostpunk from Steam as usual; there is nothing to run before playing. Run the installer again only after a Frostpunk update or a Steam "Verify integrity of game files" (if F10 suddenly stops working, that is why).
 
 [size=4][b]Uninstall[/b][/size]
 Run the launcher again and choose Uninstall, or [i]python3 dev_menu.py uninstall[/i]. Steam's "Verify integrity of game files" also removes it.

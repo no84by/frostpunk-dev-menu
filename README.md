@@ -11,6 +11,8 @@
 - Fully reversible: uninstall puts the game files back exactly as they were (byte for byte)
 - Not affiliated with or endorsed by 11 bit studios
 
+![The developer panel in a running city](nexus/images/2-panel-in-game.png)
+
 See [docs/dev-panel.md](docs/dev-panel.md) for everything the panel can do.
 
 ## Install

@@ -3,66 +3,52 @@
 **This panel was made by 11 bit studios and is part of the game.** The Dev Menu mod only lets
 you open it with F10; it adds no buttons and changes no cheat.
 
-The names below are the exact button labels compiled into the game. The descriptions explain
-what each label says the button does. Entries marked ✅ have been checked in-game; the rest are
-still to be confirmed. Corrections are welcome (open an issue).
+![The panel in game](../nexus/images/1-panel-closeup.png)
 
-Toggle buttons show **On** (green) or **Off** (red). The game itself sorts its cheats into
-*safe* and *unsafe* ones, so treat any button you don't understand as unsafe and **try it on a
-copy of your save**.
+The panel is titled **Cheats** and has two columns, exactly as the game sorts them: **Safe
+cheats** and **Unsafe cheats** (shown in red). *Toggle* buttons show **On** (green) or **Off**
+(red) and stay as set; *action* buttons have no On/Off and do something once per click.
 
-## Economy and building
+The names are the game's own labels. The descriptions explain what each label says the button
+does; corrections are welcome (open an issue). **Try unsafe cheats on a copy of your save.**
 
-| Button | What it does |
-|---|---|
-| Infinite resources | Resources are not used up when you build, research or consume. |
-| Resources boost | Adds a large one-off amount of resources to your stockpile. |
-| Instant construction | Buildings, roads and upgrades finish the moment you place them. |
-| Valid placement everywhere | Lets you place buildings where the game would normally refuse (terrain, heat zones, overlaps). |
+## Safe cheats
 
-## Research and laws
+| Button | Type | What it does |
+|---|---|---|
+| Instant construction | toggle | Buildings, roads and upgrades finish the moment you place them. |
+| Debug events | toggle | Developer tools for the game's event / dilemma system. |
+| Debug bars | toggle | Shows developer status bars on screen. |
+| Instant research | toggle | Research in workshops finishes immediately. |
+| Instant expedition travel | toggle | Scouts and expeditions arrive at their destination immediately. |
+| Unlock all technologies | toggle | Makes every technology available to research. |
+| Unlock all buildings | toggle | Makes every building available in the build menu. |
+| Unlock all sociotech | toggle | Makes every law (Book of Laws) available to sign. |
+| Resources boost | action | Adds a large one-off amount of resources to your stockpile. |
+| Enable time in frostland | toggle | Lets time run while the Frostland map is open. |
+| Display colliders | toggle | Shows the game's internal collision shapes. |
+| Display selectors | toggle | Shows the game's internal selection markers. |
+| Display placement areas | toggle | Shows where buildings can be placed. |
+| Display camera bounds | toggle | Shows how far the camera may move. |
+| Unhide sites | action | Makes hidden Frostland map sites visible. |
 
-| Button | What it does |
-|---|---|
-| Instant research | Research in workshops finishes immediately. |
-| Research all tech | Completes every technology in the tech tree. |
-| Research custom tech | Completes a chosen / preset subset of technologies. |
-| Unlock all technologies | Makes every technology available to research. |
-| Unlock all buildings | Makes every building available in the build menu. |
-| Unlock all sociotech | Makes every law (Book of Laws) available to sign. |
-| Unlock all unlocks | Unlocks every other locked game element. |
-| Reset sociotech cooldown | Lets you sign the next law right away instead of waiting. |
+## Unsafe cheats
 
-## Citizens and society
+| Button | Type | What it does |
+|---|---|---|
+| Infinite resources | toggle | Resources are not used up when you build, research or consume. |
+| Freeze citizen statistics | toggle | Hope, discontent, health and similar values stop changing. |
+| Immortal citizens | toggle | Citizens do not die. |
+| No critical citizen statistic levels | toggle | Prevents stats from reaching their critical (game-ending) levels. |
+| Valid placement everywhere | toggle | Lets you place buildings where the game would normally refuse. |
+| Unlock all unlocks | action | Unlocks every other locked game element. |
+| Research all tech | toggle | Completes every technology in the tech tree. |
+| Research custom tech | toggle | Completes a preset subset of technologies. |
+| Change weather | action | Switches to another weather state. |
+| Reveal sites | action | Reveals the locations on the Frostland map. |
+| Decrease temperature | action | Lowers the outside temperature. |
+| Increase temperature | action | Raises the outside temperature. |
 
-| Button | What it does |
-|---|---|
-| Immortal citizens | Citizens do not die. |
-| Freeze citizen statistics | Hope, discontent, health and similar values stop changing. |
-| No critical citizen statistic levels | Prevents stats from reaching their critical (game-ending) levels. |
-| Freeze alignments | Stops the Order / Faith (or scenario equivalent) path from moving. |
-
-## Exploration and the Frostland
-
-| Button | What it does |
-|---|---|
-| Instant expedition travel | Scouts and expeditions arrive at their destination immediately. |
-| Reveal sites | Reveals the locations on the Frostland map. |
-| Unhide sites | Makes hidden map sites visible. |
-| Enable time in frostland | Lets time run while the Frostland map is open. |
-
-## Weather
-
-| Button | What it does |
-|---|---|
-| Change weather | Switches to another weather state. |
-| Increase temperature | Raises the outside temperature. |
-| Decrease temperature | Lowers the outside temperature. |
-
-## Developer views
-
-| Button | What it does |
-|---|---|
-| Debug events | Developer tools for the game's event / dilemma system. |
-| Debug bars | Shows developer status bars on screen. |
-| Display selectors | Shows the game's internal selection markers. |
+The game's code also contains *Freeze alignments* and *Reset sociotech cooldown*; they did not
+appear in the panel in the scenario we tested (the main story, day 1), so they may show only in
+some scenarios.

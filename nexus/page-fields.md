@@ -27,6 +27,8 @@ Press F10 in a city to open Frostpunk's own built-in developer panel (made by 11
 - File name on Nexus: Frostpunk Dev Menu 1.0.0
 - File description: Installer for Windows, macOS and Linux/Steam Deck. Unzip, quit the game, double-click the launcher for your system (or run `python3 dev_menu.py`). The launchers only start the Python script.
 
-**Images:** upload both, in this order:
-1. `images/1-panel-closeup.png` (primary / thumbnail): close-up of the panel.
-2. `images/2-panel-in-game.png`: the panel in a running city.
+**Images** (made by `python3 nexus/make_images.py SCREENSHOT.png` from one in-game screenshot):
+- Header (1300x372, text in the top half; Nexus draws the mod name over the bottom half): `images/header.png`
+- Gallery (1920x1080), in this order: `images/0-cover.png` (thumbnail), `images/1-panel-closeup.png`, `images/2-panel-in-game.png`
+
+**Requirements:** external resource "Python 3.6 or newer", https://www.python.org/downloads/

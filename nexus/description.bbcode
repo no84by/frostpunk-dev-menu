@@ -69,6 +69,15 @@ This is the developers' own test panel, and the game itself labels some of its c
 [size=4][b]How it works[/b][/size]
 At startup Frostpunk runs a short chain of Lua scripts; the last one, GameMain.lua, ships empty. The installer adds about 15 lines that listen for F10 and call the game's own ShowDebugButtonsPanel() / HideDebugButtonsPanel(). The changed script is appended to the end of the game's common.dat archive and one index entry in common.idx is pointed at it. Nothing is overwritten, and a small backup file (common.idx.devmenu.json) next to the archive makes uninstall exact. Details and source: [url=https://github.com/no84by/frostpunk-dev-menu]GitHub[/url].
 
+[size=4][b]Source code[/b][/size]
+Everything is open source on GitHub: [url=https://github.com/no84by/frostpunk-dev-menu]github.com/no84by/frostpunk-dev-menu[/url]
+[list]
+[*][url=https://github.com/no84by/frostpunk-dev-menu/blob/main/dev_menu.py]dev_menu.py[/url]: the installer (about 300 lines of Python, with comments)
+[*][url=https://github.com/no84by/frostpunk-dev-menu#how-it-works]How it works[/url]: the Lua hook and the game's archive format, for anyone who wants to study it or build their own mods
+[*][url=https://github.com/no84by/frostpunk-dev-menu/blob/main/docs/dev-panel.md]Panel reference[/url]: every button
+[*][url=https://github.com/no84by/frostpunk-dev-menu/issues]Issues[/url]: bug reports and corrections welcome
+[/list]
+
 [size=4][b]Credits[/b][/size]
 Frostpunk, its developer panel and all its cheats: [b]11 bit studios[/b]. This mod contains no game files. Not affiliated with or endorsed by 11 bit studios.
 Installer: MIT licence.

@@ -1,0 +1,82 @@
+[size=5][b]Frostpunk Dev Menu (F10)[/b][/size]
+Press [b]F10[/b] in a running city to open Frostpunk's [b]own built-in developer panel[/b]: infinite resources, instant construction, instant research, immortal citizens, instant expeditions, weather and temperature control, unlock everything, and more.
+
+[size=4][b][color=#e6b800]We did not create this panel. We only switch it on.[/color][/b][/size]
+The developer panel and every cheat in it were made by [b]11 bit studios[/b] and are already inside every copy of Frostpunk 1. The game just has no key or menu that opens it. This mod adds that one key: F10 calls the game's own [i]ShowDebugButtonsPanel()[/i] function. No cheat, button or feature in the panel is ours.
+
+[list]
+[*]Frostpunk 1: [b]Windows, macOS, Linux / Steam Deck[/b] (Proton)
+[*][b]Fully reversible[/b]: uninstall puts the game files back exactly as they were
+[*][b]Open source[/b]: [url=https://github.com/no84by/frostpunk-dev-menu]github.com/no84by/frostpunk-dev-menu[/url]
+[/list]
+
+[size=4][b]What's in the panel[/b][/size]
+[b]Economy and building[/b]
+[list]
+[*][b]Infinite resources[/b]: resources are not used up
+[*][b]Resources boost[/b]: a large one-off resource top-up
+[*][b]Instant construction[/b]: buildings, roads and upgrades finish immediately
+[*][b]Valid placement everywhere[/b]: build where the game would normally refuse
+[/list]
+[b]Research and laws[/b]
+[list]
+[*][b]Instant research[/b]
+[*][b]Research all tech[/b] / [b]Research custom tech[/b]
+[*][b]Unlock all technologies[/b] / [b]buildings[/b] / [b]sociotech[/b] (laws) / [b]unlocks[/b]
+[*][b]Reset sociotech cooldown[/b]: sign the next law right away
+[/list]
+[b]Citizens and society[/b]
+[list]
+[*][b]Immortal citizens[/b]
+[*][b]Freeze citizen statistics[/b] (hope, discontent, health...)
+[*][b]No critical citizen statistic levels[/b]
+[*][b]Freeze alignments[/b] (Order / Faith path)
+[/list]
+[b]Exploration and the Frostland[/b]
+[list]
+[*][b]Instant expedition travel[/b]
+[*][b]Reveal sites[/b] / [b]Unhide sites[/b]
+[*][b]Enable time in frostland[/b]
+[/list]
+[b]Weather[/b]
+[list]
+[*][b]Change weather[/b], [b]Increase temperature[/b], [b]Decrease temperature[/b]
+[/list]
+[b]Developer views[/b]: Debug events, Debug bars, Display selectors.
+
+Button names are the game's own labels; the full reference, with what is confirmed in-game, is on [url=https://github.com/no84by/frostpunk-dev-menu/blob/main/docs/dev-panel.md]GitHub[/url].
+
+[size=4][b]Installation[/b][/size]
+[b]Quit Frostpunk[/b], unzip the download anywhere, then double-click the file for your system:
+[list]
+[*][b]Windows[/b]: [i]Install Dev Menu (Windows).bat[/i] (if you see "Windows protected your PC": More info, then Run anyway)
+[*][b]macOS[/b]: [i]Install Dev Menu (Mac).command[/i] (first time: right-click, Open; on macOS 15+: System Settings, Privacy & Security, Open Anyway)
+[*][b]Linux / Steam Deck[/b] (Desktop Mode): in a terminal, [i]bash install-dev-menu-linux.sh[/i]
+[/list]
+It finds Frostpunk in your Steam library by itself (or asks for the folder) and offers Install or Uninstall. Then load a city and press [b]F10[/b]. In the main menu F10 does nothing visible: the panel exists only inside a city.
+
+[b]You install it once.[/b] The change is saved in the game files, so F10 keeps working every time you start Frostpunk from Steam as usual; there is nothing to run before playing. Run the installer again only after a Frostpunk update or a Steam "Verify integrity of game files" (if F10 suddenly stops working, that is why).
+
+[b]Those three files are only launchers.[/b] They do not touch the game. All the work is done by one Python script, [i]dev_menu.py[/i]; the launchers just find Python on your computer and start that script, so non-technical players can use a double-click instead of typing commands. If Python is missing, the launcher tells you how to get it (on Windows it can install it for you). Each launcher is about 20 lines of plain text you can read in any editor.
+
+[b]Prefer to run it yourself?[/b] With Python 3.6+ installed, open a terminal in the folder and run:
+[code]python3 dev_menu.py              (interactive menu; Windows: py -3 dev_menu.py)
+python3 dev_menu.py install
+python3 dev_menu.py uninstall
+python3 dev_menu.py status
+python3 dev_menu.py install --game-dir "D:\Games\Frostpunk"[/code]
+GOG and Epic copies are not detected automatically; use [i]--game-dir[/i] with the game folder.
+
+[size=4][b]Uninstall[/b][/size]
+Run the launcher again and choose Uninstall, or [i]python3 dev_menu.py uninstall[/i]. Steam's "Verify integrity of game files" also removes it.
+[b]A game update or a Steam file verification removes the Dev Menu[/b]; just install it again.
+
+[size=4][b]Be careful[/b][/size]
+This is the developers' own test panel, and the game itself labels some of its cheats as "unsafe". Some buttons make permanent changes to your city. [b]Use a copy of your save or a throwaway city.[/b] We have not tested whether cheats affect Steam achievements; assume they might. Opening the panel pauses the game.
+
+[size=4][b]How it works[/b][/size]
+At startup Frostpunk runs a short chain of Lua scripts; the last one, GameMain.lua, ships empty. The installer adds about 15 lines that listen for F10 and call the game's own ShowDebugButtonsPanel() / HideDebugButtonsPanel(). The changed script is appended to the end of the game's common.dat archive and one index entry in common.idx is pointed at it. Nothing is overwritten, and a small backup file (common.idx.devmenu.json) next to the archive makes uninstall exact. Details and source: [url=https://github.com/no84by/frostpunk-dev-menu]GitHub[/url].
+
+[size=4][b]Credits[/b][/size]
+Frostpunk, its developer panel and all its cheats: [b]11 bit studios[/b]. This mod contains no game files. Not affiliated with or endorsed by 11 bit studios.
+Installer: MIT licence.
